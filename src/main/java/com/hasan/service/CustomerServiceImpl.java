@@ -29,11 +29,8 @@ public class CustomerServiceImpl implements CustomerService {
 
 	private final CustomerRepository customerRepository;
 
-	// =========================================================
-	// CREATE CUSTOMER
-	// =========================================================
-
-	@Override
+		// CREATE CUSTOMER
+		@Override
 	@Caching(evict = { @CacheEvict(value = "customerSearch", allEntries = true),
 			@CacheEvict(value = "customerStatusSearch", allEntries = true) })
 	public CustomerResponse createCustomer(Customer request) {
@@ -74,7 +71,6 @@ public class CustomerServiceImpl implements CustomerService {
 		return convertToResponse(savedCustomer);
 	}
 
-	// =========================================================
 	// GET CUSTOMER BY ID
 	// =========================================================
 
@@ -89,8 +85,7 @@ public class CustomerServiceImpl implements CustomerService {
 		return convertToResponse(customer);
 	}
 
-	// =========================================================
-	// GET ALL CUSTOMERS - PAGINATION AND SORTING
+		// GET ALL CUSTOMERS - PAGINATION AND SORTING
 	// =========================================================
 
 	@Override
